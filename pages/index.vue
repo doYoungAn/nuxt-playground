@@ -82,6 +82,7 @@ import { mapState, mapMutations, Commit, MapperForStateWithNamespace } from 'vue
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import { getters, RootState } from '~/store';
+// import 'vue-apollo'
 
 export default Vue.extend({
   components: {
@@ -97,8 +98,9 @@ export default Vue.extend({
     this.init();
   },
   methods: {
-    init() {
+    async init() {
       console.log('this', this);
+      const response = await this.$apollo.query({});
     }
   }
 });
