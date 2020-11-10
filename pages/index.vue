@@ -76,14 +76,30 @@
   </v-row>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { mapState, mapMutations, Commit, MapperForStateWithNamespace } from 'vuex';
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import { getters, RootState } from '~/store';
 
-export default {
+export default Vue.extend({
   components: {
     Logo,
     VuetifyLogo
+  },
+  data: () => ({
+
+  }),
+  computed: {
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+      console.log('this', this);
+    }
   }
-}
+});
 </script>
